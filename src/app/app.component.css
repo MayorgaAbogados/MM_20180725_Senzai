@@ -1,0 +1,284 @@
+.wrapper {
+    background-color: #e6f1f9;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+}
+
+.header {
+    width: 100%;
+    height: 200px;
+    display: block;
+    background-color: #e6f1f9;
+    background-image: url("../assets/Formulario-01.png");
+    background-size: cover;
+    background-position: top center;
+}
+
+.container {
+    width: calc(100% - 150px);
+    padding: 55px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    height: fit-content;
+    background-color: white;
+    display: block;
+    border-top: 12px solid rgb(111, 182, 255);
+    position: relative;
+    top: -70px;
+}
+
+.shadow {
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+}
+
+.footer {
+    width: 100%;
+    min-height: 300px;
+    height: fit-content;
+    padding: 25px 0px;
+    display: block;
+    text-align: center;
+    font: 400 14px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.66);
+}
+
+.footer h3 {
+    font-size: 1.25em;
+    font-weight: 500;
+    width: calc(100% - 150px);
+    padding: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+.view h1 {
+    margin: 20px 5px;
+    font-weight: 700;
+    font-size: 25pt;
+}
+
+.view p {
+    text-align: left;
+    line-height: 1.5em;
+    word-break: keep-all;
+}
+
+button {
+    border: none;
+    background-color: #eee;
+    color: #444;
+    font-weight: 400;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 8em;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.question {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    text-align: left;
+    padding: 5px;
+    margin: 5px;
+}
+
+.question label {
+    display: block;
+    padding: 5px;
+    margin: 5px 0px;
+}
+
+.question input {
+    display: inline-block;
+    width: 275px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.question input[type="year"] {
+    display: inline-block;
+    width: 120px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.question select {
+    display: inline-block;
+    width: 85px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.question select.area {
+    width: 200px;
+}
+
+.question span.error {
+    display: block;
+    padding: 5px;
+    margin: 5px 0px;
+    font-size: 0.8em;
+    color: red;
+}
+
+.question .asterix {
+    font-size: 1.1em;
+    color: red;
+}
+
+ul {
+    padding: 5px;
+    text-align: left;
+}
+
+li {
+    padding: 10px;
+    text-transform: uppercase;
+    line-height: 1.1em;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.header-logo {
+    display: block;
+    margin: 0 auto;
+    height: calc(100% - 100px);
+    padding: 15px;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+.labelfile {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus+.labelfilel,
+.inputfile+.labelfile:hover {
+    background-color: red;
+}
+
+.inputfile+.labelfile {
+    cursor: pointer;
+    /* "hand" cursor */
+}
+
+.inputfile:focus+.labelfile {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile+.labelfile * {
+    pointer-events: none;
+}
+
+.labelfile {
+    border: none;
+    background-color: #eee;
+    color: #444;
+    font-weight: 400;
+    padding: 15px !important;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content !important;
+}
+
+.labelfile:hover {
+    background-color: #ddd;
+}
+
+.spinner {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.spinner img {
+    width: 15%;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: calc(100% - 70px);
+        padding: 22px;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        height: fit-content;
+        background-color: white;
+        display: block;
+        border-top: 12px solid rgb(111, 182, 255);
+        position: relative;
+        top: -70px;
+    }
+    .view h1 {
+        margin: 10px 5px;
+        font-weight: 700;
+        font-size: 12pt;
+    }
+    .view p {
+        font-size: 10pt;
+    }
+    .footer h3 {
+        font-size: 1em;
+        font-weight: 500;
+        width: calc(100% - 50px);
+        padding: 10px;
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+    }
+    .question input {
+        display: inline-block;
+        width: 200px;
+        padding: 5px;
+        margin: 5px;
+    }
+    .question input[type="year"] {
+        display: inline-block;
+        width: 80px;
+        padding: 5px;
+        margin: 5px;
+    }
+}

@@ -1,0 +1,282 @@
+<div class="wrapper">
+
+  <div class="header">
+    <img src="../assets/favicon.png" class="header-logo">
+  </div>
+
+  <div class="container shadow">
+
+    <div class="view welcome" *ngIf="viewState == 'welcome'">
+      <br>
+      <h1>INSTRUCCIONES:</h1>
+      <br>
+      <p>La presente prueba virtual contiene solo 3 PREGUNTAS.
+        <br>
+        <br> Cada respuesta (una sola por pregunta) debe brindarse seleccionando y ADJUNTANDO UN ARCHIVO que contenga el documento
+        solicitado
+        <br>( WORD o PDF, a su criterio).</p>
+      <br>
+      <button (click)="goTo('info-personal')">SIGUIENTE</button>
+    </div>
+    <div class="view info-personal" *ngIf="viewState == 'info-personal'">
+
+      <h1>INFORMACIÓN DE CONTACTO</h1>
+
+      <div class="question">
+        <label>NOMBRES Y APELLIDOS
+          <span class="asterix">*</span>
+        </label>
+        <input placeholder="Ingresa tus nombres y apellidos" type="text" [(ngModel)]="info.name">
+        <span class="error" *ngIf="errors.info.name">{{errors.info.name}}
+        </span>
+      </div>
+      <br>
+
+      <div class="question">
+        <label>CORREO ELECTRONICO
+          <span class="asterix">*</span>
+        </label>
+        <input placeholder="Ingresa tu dirección de correo electrónico" type="email" [(ngModel)]="info.email">
+        <span class="error" *ngIf="errors.info.email">{{errors.info.email}}</span>
+      </div>
+      <br>
+
+      <div class="question">
+        <label>IDENTIFICACIÓN (C.C o C.E)
+          <span class="asterix">*</span>
+        </label>
+        <input placeholder="Ingresa tu numero de documento de identificación" type="text" [(ngModel)]="info.id.number">
+        <select [(ngModel)]="info.id.type">
+          <option *ngFor="let  idType of  idTypes" [value]=" idType">{{ idType}}</option>
+        </select>
+        <span class="error" *ngIf="errors.info.id.number">{{errors.info.id.number}}</span>
+        <span class="error" *ngIf="errors.info.id.type">{{errors.info.id.type}}</span>
+      </div>
+      <br>
+
+      <div class="question">
+        <label>NUMERO DE TARJETA PROFESIONAL
+          <span class="asterix">*</span>
+        </label>
+        <input placeholder="Ingresa tu numero de tarjeta profesional" type="email" [(ngModel)]="info.professionalCard">
+        <span class="error" *ngIf="errors.info.professionalCard">{{errors.info.professionalCard}}</span>
+      </div>
+      <br>
+
+      <div class="question">
+        <label>CELULAR
+          <span class="asterix">*</span>
+        </label>
+        <input type="tel" [(ngModel)]="info.cellphone" placeholder="Ingresa un numero de celular ">
+        <span class="error" *ngIf="errors.info.cellphone">{{errors.info.cellphone}}</span>
+      </div>
+      <br>
+
+      <div class="question">
+        <label>CIUDAD
+          <span class="asterix">*</span>
+        </label>
+        <input placeholder="Ingresa tu ciudad de residencia" type="text" [(ngModel)]="info.city">
+        <span class="error" *ngIf="errors.info.city">{{errors.info.city}}</span>
+      </div>
+      <br>
+
+      <div class="question">
+        <label>TELEFONO FIJO CON INDICATIVO (OPCIONAL)
+        </label>
+        <input type="tel" [(ngModel)]="info.phone" placeholder="Ingresa un numero de telefono ">
+      </div>
+      <br>
+
+      <div class="question">
+        <label>DIRECCIÓN (OPCIONAL)
+        </label>
+        <input placeholder="Ingresa tu dirección" type="text" [(ngModel)]="info.address">
+      </div>
+      <br>
+
+      <br>
+      <button (click)="goTo('welcome')">ATRAS</button>
+      <button (click)="goTo('info-professional')">SIGUIENTE</button>
+    </div>
+    <div class="view info-professional" *ngIf="viewState == 'info-professional'">
+
+      <h1>INFORMACIÓN PROFESIONAL</h1>
+
+      <div class="question">
+        <label>UNIVERSIDAD EN QUE OBTUVO TITULO DE ABOGADO
+          <span class="asterix">*</span>
+        </label>
+        <input placeholder="Nombre de la universidad" type="text" [(ngModel)]="professional.undegraduated.institution">
+        <input placeholder="Año de graduación" type="year" [(ngModel)]="professional.undegraduated.year">
+        <span class="error" *ngIf="errors.professional.undegraduated.institution">{{errors.professional.undegraduated.institution}}</span>
+        <span class="error" *ngIf="errors.professional.undegraduated.year">{{errors.professional.undegraduated.year}}</span>
+      </div>
+      <br>
+
+      <div class="question">
+        <label>UNIVERSIDAD EN QUE OBTUVO TITULO DE POSTGRADO
+          <span class="asterix">*</span>
+        </label>
+        <input placeholder="Nombre de la universidad" type="text" [(ngModel)]="professional.graduated.institution">
+        <input placeholder="Año de graduación" type="year" [(ngModel)]="professional.graduated.year">
+        <select [(ngModel)]="professional.title" class="area" (change)="onChange()">
+          <option *ngFor="let title of titles" [value]="title">{{title}}</option>
+        </select>
+        <span class="error" *ngIf="errors.professional.graduated.institution">{{errors.professional.graduated.institution}}</span>
+        <span class="error" *ngIf="errors.professional.graduated.year">{{errors.professional.graduated.year}}</span>
+        <span class="error" *ngIf="errors.professional.title">{{errors.professional.title}}</span>
+      </div>
+      <br>
+
+      <div class="question">
+        <label> SELECCIONE SU ESPECIALIDAD
+          <span class="asterix">*</span>
+        </label>
+        <select [(ngModel)]="professional.area.type" class="area" (change)="onChange()">
+          <option *ngFor="let area of areas" [value]="area">{{area}}</option>
+        </select>
+        <input placeholder="Especifique su especialidad" type="text" [(ngModel)]="professional.area.other" *ngIf="isAreaOther">
+        <span class="error" *ngIf="errors.professional.area.main">{{errors.professional.area.main}}</span>
+
+      </div>
+      <br>
+
+      <br>
+      <button (click)="goTo('info-personal')">ATRAS</button>
+      <button (click)="goTo('exam')">SIGUIENTE</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="view info" *ngIf="viewState == 'exam'">
+
+      <h1>PRUEBAS ABOGADO ESPECIALISTA</h1>
+      <br>
+
+      <div class="question">
+        <label>Favor redacte propuesta y sustentación de modificación de un artículo de una ley, decreto o resolución del área de
+          su especialidad ; en máximo una página tamaño carta.</label>
+        <label for="file1" class="labelfile">{{files.proposalText}}</label>
+        <input id="file1" class="inputfile" type="file" (change)="onFileChangeProposal($event)" accept=".pdf,.doc,.docx" />
+      </div>
+      <br>
+
+      <div class="question">
+        <label>Favor adjunte un archivo de recurso judicial, demanda o alegatos de conclusión que en los últimos tres años haya
+          redactado en su ESPECIALIDAD.</label>
+        <label for="file2" class="labelfile">{{files.resourceText}}</label>
+        <input id="file2" class="inputfile" type="file" (change)="onFileChangeResource($event)" accept=".pdf,.doc,.docx">
+      </div>
+      <br>
+
+      <div class="question">
+        <label>Favor adjunte un "CONCEPTO JURIDICO ESCRITO" que en los últimos tres años haya redactado en su especialidad.</label>
+        <label for="file3" class="labelfile">{{files.conceptText}}</label>
+        <input id="file3" class="inputfile" type="file" (change)="onFileChangeConcept($event)" accept=".pdf,.doc,.docx">
+      </div>
+      <br>
+
+      <br>
+      <button (click)="goTo('info-professional')">ATRAS</button>
+      <button (click)="goTo('confirm')">CONFIRMAR</button>
+    </div>
+
+    <div class="view confirm" *ngIf="viewState == 'confirm'">
+
+      <br>
+      <h1>CONFIRMAR ENVIAR PRUEBA</h1>
+      <ul>
+        <li>
+          <strong>NOMBRES</strong> : {{info.name}}</li>
+        <li>
+          <strong>CORREO ELECTRONICO </strong>:{{info.email}} </li>
+        <li>
+          <strong>IDENTIFICACIÓN </strong>: {{info.id.tpye}} {{info.id.number}}</li>
+        <li>
+          <strong>TELEFONO CELULAR</strong> : {{info.cellphone}}</li>
+        <li *ngIf="info.phone">
+          <strong>TELEFONO FIJO</strong> : {{info.phone}}</li>
+        <li>RESIDE EN LA CIUDAD DE {{info.city}}
+          <span *ngIf="info.address">
+            <strong>EN LA DIRECCIÓN</strong>
+          </span> {{info.address}}</li>
+        <li> GRAUADO DE ABOGADO EN LA UNIVERSIDAD
+          <strong>{{professional.undegraduated.institution}}</strong> EL AÑO {{professional.undegraduated.year}}</li>
+        <li>{{professional.title}} EN
+          <strong>{{professional.area.main}}</strong> DE LA UNIVERSIDAD {{professional.graduated.institution}} GRADUADO EL AÑO {{professional.undegraduated.year}}
+        </li>
+      </ul>
+
+      <h2 *ngIf="sendingFlag" class="spinner">
+        Enviando ...
+        <img src="../assets/spinner.gif">
+      </h2>
+
+
+
+      <button (click)="goTo('exam')">ATRAS</button>
+      <button (click)="uploadFormToServer()">ENVIAR</button>
+    </div>
+
+    <div class="view thanks" *ngIf="viewState == 'thanks'">
+      <h1>MUCHAS GRACIAS </h1>
+      <h2>Pronto nuestro equipo se comunicara con usted via email al correo {{info.email}}
+        <br> o mediante llamada telefonica al numero {{info.cellphone}}</h2>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="footer">
+    <h3>
+      Si tiene problemas técnicos para presentar la prueba, que por favor nos escriban sus preguntas o inquietudes a
+      <a href="mailto:INFO@MAYORGA.COM.CO">info@mayorga.com.co</a>
+    </h3>
+    <br>
+    <br> Todos los derechos reservados Copyright © {{currentYear}}. Desarrollado por Mayorga Abogados.
+    <br>
+    <br> SEDE 1 (Consultoría Corporativa) Av. El Dorado No. 68C-61 Oficina 204-Torre Central Davivienda
+    <br> SEDE 2 (Arbitramento y Litigio): Calle 22 F No. 85 A-40 Piso 2
+    <br> Bogotá D.C. - Colombia
+    <br>
+    <a href="http://mayorga.com.co"> www.mayorga.com.co </a>
+  </div>
