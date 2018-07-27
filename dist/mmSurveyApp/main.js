@@ -138,7 +138,7 @@ var AppComponent = /** @class */ (function () {
         formData.append("contactCellphone", this.form.contactCellphone);
         formData.append("phone", this.form.Phone);
         formData.append("twitter", this.form.Twitter);
-        var url = "http://passport.mayorga.com.co/app/backend/main.php";
+        var url = "http://membresia.mayorga.com.co/app/backend/main.php";
         var self = this;
         self.sendingFlag = true;
         axios__WEBPACK_IMPORTED_MODULE_2___default.a
