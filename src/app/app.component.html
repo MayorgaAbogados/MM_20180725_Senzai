@@ -1,128 +1,21 @@
-<div class="wrapper">
-
-
-  <header class="mm header">
-    <div class="message">
-      <h2>MEMBRESIA
-        <strong>GRATIS</strong>
-      </h2>
-    </div>
-    <div class="logo">
-      <img src="../assets/logo.png" height="100%">
-    </div>
-  </header>
-
-  <div class="banner">
-    <div class="c1"></div>
-    <div class="c2"></div>
-    <div class="c3"></div>
-  </div>
-
-  <main class="mm form">
-
-    <div class="title">
-      <img class="title-icon">
-      <h3 class="title-text">
-        Para culminar la
-        <strong>ACTIVACION GRATUITA</strong>
-        de SU MEMBRESIA,
-        <br> favor diligencie los siguientes campos</h3>
-    </div>
-
-    <div class="content">
-
-      <div class="form-input" id="mm-form-company" (click)="companyIsFocus = true" (focusout)="focusAnim('company')">
-        <i class="fas fa-briefcase"></i>
-        <label [ngClass]="{'focus': companyIsFocus}">Razón Social</label>
-        <input type="text" [(ngModel)]="form.company">
-      </div>
-
-      <div class="form-input" id="mm-form-nit" (click)="nitIsFocus = true" (focusout)="focusAnim('nit')">
-        <i class="fas fa-id-card"></i>
-        <label [ngClass]="{'focus': nitIsFocus}">NIT</label>
-        <input type="text" [(ngModel)]="form.nit">
-      </div>
-
-
-      <div class="form-input mm2 fc" id="mm-form-industry" (click)="industryIsFocus = true" (focusout)="focusAnim('industry')">
-        <i class="fas fa-file-contract"></i>
-        <label [ngClass]="{'focus': industryIsFocus}">Actividad</label>
-        <input type="text" [(ngModel)]="form.industry">
-      </div>
-
-      <div class="form-input mm2" id="mm-form-city" (click)="cityIsFocus = true" (focusout)="focusAnim('city')">
-        <i class="fas fa-map-marked-alt"></i>
-        <label [ngClass]="{'focus': cityIsFocus}">Ciudad</label>
-        <input type="text" [(ngModel)]="form.city">
-      </div>
-
-
-      <div class="form-input mm3 fc" id="mm-form-name" (click)="nameIsFocus = true" (focusout)="focusAnim('name')">
-        <i class="fas fa-user"></i>
-        <label [ngClass]="{'focus': nameIsFocus}">Nombre Completo</label>
-        <input type="text" [(ngModel)]="form.contactName">
-      </div>
-
-      <div class="form-input mm3" id="mm-form-email" (click)="emailIsFocus = true" (focusout)="focusAnim('email')">
-        <i class="fas fa-envelope"></i>
-        <label [ngClass]="{'focus': emailIsFocus}">Correo Electrónico</label>
-        <input type="text" [(ngModel)]="form.contactEmail">
-      </div>
-      <div class="form-input mm3" id="mm-form-cellphone" (click)="cellphoneIsFocus = true" (focusout)="focusAnim('cellphone')">
-        <i class="fas fa-mobile-alt"></i>
-        <label [ngClass]="{'focus': cellphoneIsFocus}">Teléfono Celular</label>
-        <input type="text" [(ngModel)]="form.cellphone">
-      </div>
-
-
-      <div class="form-input" id="mm-form-phone" (click)="phoneIsFocus = true" (focusout)="focusAnim('phone')">
-        <i class="fas fa-phone-square"></i>
-        <label [ngClass]="{'focus': phoneIsFocus}">Teléfono Fijo + Ext</label>
-        <input type="text" [(ngModel)]="form.phone">
-      </div>
-
-      <div class="form-input" id="mm-form-twitter" (click)="twitterIsFocus = true" (focusout)="focusAnim('twitter')">
-        <i class="fab fa-twitter-square"></i>
-        <label [ngClass]="{'focus': twitterIsFocus}">Twitter</label>
-        <input type="text" [(ngModel)]="form.twitter">
-      </div>
-
-      <div class="row">
-        <div class=""></div>
-        <div class="button enviar" (click)="postForm()">ENVIAR</div>
-      </div>
-
-
-
-
-    </div>
-
-  </main>
-
-  <footer class="mm footer">
-    <div class="row">
-      <span>
-        info@mayorga.com.co
-      </span>
-      <span>
-        Bogotá D.C - Colombia
-      </span>
-    </div>
-    <div class="row">
-      <div class="col skype">
-        <i class="fab fa-skype"></i>
-        <span>mayorgaabogados</span>
-      </div>
-      <div class="col twitter">
-        <i class="fab fa-twitter"></i>
-        <span>@mayorgaabogados</span>
-      </div>
-      <div class="col web">
-        <i class="fas fa-globe"></i>
-        <span>www.mayorga.com.co</span>
-      </div>
-    </div>
-  </footer>
-
-
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
