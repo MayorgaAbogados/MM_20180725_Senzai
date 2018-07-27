@@ -127,3 +127,10 @@ html,
 body {
   font-family: "Montserrat", sans-serif;
 }
+html,
+body {
+  background-color: #aaaaaa;
+  color: white;
+  background-image: url("./assets/bg_blur.jpg");
+  background-size: cover;
+}

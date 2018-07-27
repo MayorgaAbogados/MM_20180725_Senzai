@@ -8,21 +8,8 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 
-import { VwWelcomeComponent } from "./views/vw-welcome/vw-welcome.component";
-import { VwPersonalInfoComponent } from "./views/vw-personal-info/vw-personal-info.component";
-import { VwThanksComponent } from "./views/vw-thanks/vw-thanks.component";
-import { VwExamComponent } from "./views/vw-exam/vw-exam.component";
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    VwWelcomeComponent,
-    VwPersonalInfoComponent,
-    VwThanksComponent,
-    VwExamComponent
-  ],
+  declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
